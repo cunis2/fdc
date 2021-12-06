@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.fdc.mapper.ProjectMapper">
+    <insert id="insertProject" parameterType="com.example.fdc.beans.Project">
+        insert into project values (#{PName},#{pid},#{cid},#{dataUrl},#{state},#{price},#{MPrinciple},#{APrinciple},#{LPrinciple},#{BTime},#{ETime},#{type});
+    </insert>
+    <update id="updateProject" parameterType="com.example.fdc.beans.Project">
+        update project set pname=#{PName},cid=#{cid},data_url=#{dataUrl},state=#{state},price=#{price},Mprinciple=#{MPrinciple},Aprinciple=#{APrinciple},Lprinciple=#{LPrinciple},Btime=#{BTime},Etime=#{ETime},type=#{type} where pid=#{pid};
+    </update>
+    <delete id="deleteProjectByPid">
+        delete from project where pid=#{pid};
+    </delete>
+    <select id="selectProjectByPid" resultType="com.example.fdc.beans.Project">
+        select *from project where pid=#{pid};
+    </select>
+</mapper>

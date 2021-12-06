@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.fdc.mapper.ClientMapper">
+
+
+    <insert id="insertClient" parameterType="com.example.fdc.beans.ClientBean">
+        insert into client values (#{cid},#{name},#{telephone},#{qq},#{email},#{unit1},#{unit2});
+    </insert>
+
+    <update id="updateClient" parameterType="com.example.fdc.beans.ClientBean">
+        update client set name=#{name},telephone=#{telephone},qq=#{qq},email=#{email},unit1=#{unitq},unit2=#{unit2} where cid=#{cid};
+    </update>
+
+    <delete id="deleteClientByCid">
+        delete from client where cid=#{cid};
+    </delete>
+
+    <select id="selectClientByCid" resultType="com.example.fdc.beans.ClientBean">
+        select * from client where cid=#{cid};
+    </select>
+
+</mapper>
+    

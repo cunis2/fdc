@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.fdc.mapper.PerformMapper">
+
+    <insert id="insertPerform" parameterType="com.example.fdc.beans.Perform">
+        insert into perform values (#{id},#{eid},#{pid});
+    </insert>
+
+    <update id="updatePerform" parameterType="com.example.fdc.beans.Perform">
+        update perform set eid=#{eid},pid=#{pid} where id=#{id};
+    </update>
+
+    <delete id="deletePerformByMid">
+        delete from perform where id=#{id};
+    </delete>
+    <select id="selectPerformByMid" resultType="com.example.fdc.beans.Perform">
+        select *from perform where id=#{id};
+    </select>
+</mapper>
